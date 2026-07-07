@@ -6,7 +6,6 @@
 
 .container {
     display: grid;
-    /* Laptop ke liye 6 columns */
     grid-template-columns: repeat(6, minmax(100px, 1fr));
     gap: 20px;
     height: 100vh;
@@ -16,7 +15,7 @@
     grid-column: span 6;
     background: lightslategray;
     display: flex;
-    justify-content: space-between; /* Space create karne ke liye */
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
     height: 50px;
@@ -32,7 +31,6 @@
     color: black;
 }
 
-/* Hamburger icon laptop par chupa dein */
 .navbar i {
     display: none;
 }
@@ -43,6 +41,7 @@
     align-items: center;
     height: 100px;
     background: grey;
+    transition: transform 0.3s ease;
 }
 
 .footer1 {
@@ -52,30 +51,31 @@
     justify-content: center;
     align-items: center;
     height: 50px;
+}.box:hover {
+    background: lightgrey;
+    transform: translateY(-20px);
+    box-shadow: 0 10px 20px black; 
 }
-
-/* --- Media Query for Mobile --- */
 @media (max-width: 768px) {
     .container {
-        /* Mobile par sirf 1 column */
         grid-template-columns: 1fr;
     }
 
     .navbar .links {
-        display: none; /* Links chupa dein */
+        display: none; 
     }
 
     .navbar i {
-        display: block; /* Hamburger show karein */
+        display: block;
         cursor: pointer;
     }
 
     .navbar {
-        grid-column: span 1; /* Navbar ko full width le */
+        grid-column: span 1;
     }
 
     .box {
-        grid-column: span 1; /* Har box full width le */
+        grid-column: span 1;
     }
 
     .footer1 {
